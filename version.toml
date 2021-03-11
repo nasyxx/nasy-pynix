@@ -1,0 +1,115 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+
+[flake8-docstrings]
+source = "pypi"
+pypi = "flake8-docstrings"
+
+[flake8-broken-line]
+source = "pypi"
+pypi = "flake8-broken-line"
+
+[spinners]
+source = "pypi"
+pypi = "spinners"
+
+[python-cfonts]
+source = "pypi"
+pypi = "python-cfonts"
+
+[better_exceptions]
+source = "pypi"
+pypi = "better_exceptions"
+
+[pip_shims]
+source = "pypi"
+pypi = "pip_shims"
+
+[protobuf]
+source = "pypi"
+pypi = "protobuf"
+
+[halo]
+source = "pypi"
+pypi = "halo"
+
+[pdm]
+source = "pypi"
+pypi = "pdm"
+
+[log_symbols]
+source = "pypi"
+pypi = "log_symbols"
+
+[pdir2]
+source = "pypi"
+pypi = "pdir2"
+
+[flake8-comprehensions]
+source = "pypi"
+pypi = "flake8-comprehensions"
+
+[wemake-python-styleguide]
+source = "pypi"
+pypi = "wemake-python-styleguide"
+
+[flake8-bugbear]
+source = "pypi"
+pypi = "flake8-bugbear"
+
+[flake8-isort]
+source = "pypi"
+pypi = "flake8-isort"
+
+[darglint]
+source = "pypi"
+pypi = "darglint"
+
+[flake8-commas]
+source = "pypi"
+pypi = "flake8-commas"
+
+[flake8_bandit]
+source = "pypi"
+pypi = "flake8_bandit"
+
+[jupyter_qtconsole_colorschemes]
+source = "pypi"
+pypi = "jupyter_qtconsole_colorschemes"
+
+[pycomplete]
+source = "pypi"
+pypi = "pycomplete"
+
+[resolvelib]
+source = "pypi"
+pypi = "resolvelib"
+
+[pythonfinder]
+source = "pypi"
+pypi = "pythonfinder"
+
+[pdm-pep517]
+source = "pypi"
+pypi = "pdm-pep517"
+
+[flake8-eradicate]
+source = "pypi"
+pypi = "flake8-eradicate"
+
+[flake8-quotes]
+source = "pypi"
+pypi = "flake8-quotes"
+
+[flake8-rst-docstrings]
+source = "pypi"
+pypi = "flake8-rst-docstrings"
+
+[flake8-string-format]
+source = "pypi"
+pypi = "flake8-string-format"
+
+[naipyext]
+source = "pypi"
+pypi = "naipyext"
