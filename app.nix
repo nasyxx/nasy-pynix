@@ -11,7 +11,9 @@ let
 in
 toApps [
   "black"
-  "pdm"
   "isort"
+  "mypy"
+  "nvchecker"
+  "pdm"
 ] //
 { }
