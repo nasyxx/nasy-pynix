@@ -1,7 +1,6 @@
 { pkgs ? import <nixpkgs> { }
 , python ? "python3"
 , overridePythonPackage ? false
-, ...
 }:
 
 let
