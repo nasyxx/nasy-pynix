@@ -1,22 +1,26 @@
 { pkgs ? import <nixpkgs> { }
 , python ? "python3"
+, overridePythonPackage ? false
 , ...
 }:
+
 let
   py = pkgs."${python}";
+  _pypkgs = import (./. + "/python-modules") {
+    inherit pkgs;
+    python = py;
+  };
 in
-(
-  let
-    packageOverrides = n: o: import (./. + "/python-modules") {
-      inherit pkgs;
-      python = py;
-    };
-    python = py.override { inherit packageOverrides; self = py; };
-    pypkgs = python.pkgs;
-  in
-  rec {
-    inherit python;
-    pkgs = pypkgs;
-    apps = import ./app.nix { inherit pypkgs; };
-  }
-)
+rec {
+  inherit pkgs;
+  python =
+    if overridePythonPackage
+    then py.override { packageOverrides = n: o: _pypkgs; self = python; }
+    else py;
+  pypkgs =
+    if overridePythonPackage
+    then python.pkgs
+    else _pypkgs;
+  apps = import ./app.nix { inherit pypkgs; };
+  withPackages = python.withPackages;
+}

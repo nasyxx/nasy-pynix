@@ -1,19 +1,21 @@
-{ pkgs, python, overrides ? (self: super: { }), ... }:
+{ pkgs, python, ... }:
 
 let
   packages = (self:
     let
-      callPackage = pkgs.newScope (pkgs // python.pkgs // self);
       inherit (builtins) attrNames readDir map filter listToAttrs replaceStrings;
       inherit (pkgs.lib) hasPrefix hasSuffix;
+
       fpCheck = x: !(hasPrefix "." x) && x != "default.nix" && hasSuffix ".nix" x;
       rs = s: replaceStrings [ ".nix" ] [ "" ] s;
       pypkgs = python.pkgs // self;
+      callPackage = pkgs.newScope (pkgs // pypkgs);
     in
     {
       inherit pypkgs;
     }
-    // listToAttrs
+    //
+    listToAttrs
       (map
         (name: {
           name = rs name;
@@ -22,4 +24,4 @@ let
         (filter fpCheck (attrNames (readDir ./.))))
   );
 in
-pkgs.lib.fix' (pkgs.lib.extends overrides packages)
+pkgs.lib.fix packages
