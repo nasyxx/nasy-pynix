@@ -1,7 +1,7 @@
 { buildPythonPackage, fetchPypi, pypkgs }:
 
 buildPythonPackage rec {
-  pname = "flake8-docstring";
+  pname = "flake8-docstrings";
   version = "1.5.0";
 
   src = fetchPypi {

@@ -27,7 +27,7 @@ buildPythonPackage rec {
       flake8-debugger
       flake8-isort
       flake8-eradicate
-      flake8-bandit
+      flake8_bandit
       flake8-broken-line
       flake8-rst-docstrings
       pep8-naming
