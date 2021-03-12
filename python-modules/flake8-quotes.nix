@@ -8,7 +8,7 @@ buildPythonPackage rec {
     inherit pname version;
     sha256 = "0ph5s6lxgpzz4an0ax6s5xjqypqmngwr5b1i0h9pqhzghplic49z";
   };
-  checkInputs = [ pypkgs.pytest ];
 
+  doCheck = false;
   propagatedBuildInputs = with pypkgs; [ flake8 ];
 }

@@ -11,6 +11,10 @@ buildPythonPackage rec {
 
   format = "pyproject";
   buildInputs = [ pypkgs.poetry ];
+
+  patchPhase = ''
+    sed -i 's/flake8-bugbear.*/flake8-bugbear = "*"/g' pyproject.toml
+  '';
   propagatedBuildInputs = with pypkgs;
      [
       flake8

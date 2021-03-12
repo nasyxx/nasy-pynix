@@ -9,5 +9,6 @@ buildPythonPackage rec {
     sha256 = "1ds41zg7bfcmi5m2qjjg1xm6dv5gb7xm2wfzhw1khlbg8scmh06k";
   };
 
-  propagatedBuildInputs = with pypkgs; [ flake8 pytest ];
+  doCheck = false;
+  propagatedBuildInputs = with pypkgs; [ flake8 ];
 }

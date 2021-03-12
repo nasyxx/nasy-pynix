@@ -10,5 +10,5 @@ buildPythonPackage rec {
   };
 
   doCheck = false;
-  propagatedBuildInputs = with pypkgs; [ pytest ];
+
 }

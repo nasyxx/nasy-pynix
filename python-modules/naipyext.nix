@@ -9,7 +9,7 @@ buildPythonPackage rec {
     sha256 = "0hjp6rnjhv7kgb0x3mxcg5jz7sn18f62a4fcnfyi9s677mnpc264";
   };
   format = "pyproject";
-  buildInputs = with pypkgs; [ pdm pdm-pep517 ];
+  buildInputs = with pypkgs; [ pdm-pep517 ];
   propagatedBuildInputs = with pypkgs; [
       better_exceptions
       httpx
