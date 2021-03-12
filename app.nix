@@ -1,4 +1,4 @@
-{python, pkgs}:
+{ python, pkgs }:
 
 let
   py = import (./. + "/python-modules") {
@@ -6,7 +6,11 @@ let
     python = python;
   };
   pypkgs = python.pkgs;
+  toApp = n: pypkgs.toPythonApplication pypkgs.${n};
+  toApps = apps: builtins.listToAttrs (map (app: { name = app; value = toApp app; }) apps);
 in
-{
-  pdm = pypkgs.toPythonApplication pypkgs.pdm;
-}
+toApps [
+  "pdm"
+  "isort"
+] //
+{ }
