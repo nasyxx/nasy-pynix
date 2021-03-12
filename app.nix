@@ -1,5 +1,12 @@
-{pypkgs}:
-with pypkgs;
+{python, pkgs}:
+
+let
+  py = import (./. + "/python-modules") {
+    inherit pkgs;
+    python = python;
+  };
+  pypkgs = python.pkgs;
+in
 {
-  pdm = toPythonApplication pdm;
+  pdm = pypkgs.toPythonApplication pypkgs.pdm;
 }

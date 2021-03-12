@@ -1,4 +1,4 @@
-{ pkgs, python, ... }:
+{ pkgs, python, overrides ? (self: super: {}), ... }:
 
 let
   packages = (self:
@@ -24,4 +24,4 @@ let
         (filter fpCheck (attrNames (readDir ./.))))
   );
 in
-pkgs.lib.fix packages
+pkgs.lib.fix' (pkgs.lib.extends overrides packages)
