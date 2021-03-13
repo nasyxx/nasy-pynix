@@ -42,7 +42,9 @@ import json
 import re
 from pathlib import Path
 from subprocess import run
-from tomlkit import dumps
+
+# Others
+from tomlkit import item
 
 HV = re.compile('(.*)version = ".*?";(.*)sha256 = ".*?";(.*)', re.DOTALL)
 
@@ -51,7 +53,7 @@ def update_toml() -> None:
     """Update version.toml file."""
     with open("version.toml", "w") as f:
         f.write(
-            dumps(
+            item(
                 {
                     "__config__": {
                         "oldver": "old_ver.json",
@@ -70,7 +72,7 @@ def update_toml() -> None:
                         ),
                     )
                 )
-            )
+            ).as_string()
         )
 
 
@@ -120,6 +122,7 @@ def update_files() -> None:
 
 
 def main() -> None:
+    """Run the updater."""
     update_toml()
     update_version()
     update_files()
