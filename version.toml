@@ -38,10 +38,6 @@ pypi = "restructuredtext_lint"
 source = "pypi"
 pypi = "halo"
 
-[".#flake8-comprehensions"]
-source = "pypi"
-pypi = ".#flake8-comprehensions"
-
 [pdm]
 source = "pypi"
 pypi = "pdm"
@@ -49,10 +45,6 @@ pypi = "pdm"
 [log_symbols]
 source = "pypi"
 pypi = "log_symbols"
-
-[".#darglint"]
-source = "pypi"
-pypi = ".#darglint"
 
 [pdir2]
 source = "pypi"
@@ -69,10 +61,6 @@ pypi = "wemake-python-styleguide"
 [flake8-bugbear]
 source = "pypi"
 pypi = "flake8-bugbear"
-
-[".#flake8-string-format"]
-source = "pypi"
-pypi = ".#flake8-string-format"
 
 [flake8-isort]
 source = "pypi"
@@ -118,10 +106,6 @@ pypi = "flake8-eradicate"
 source = "pypi"
 pypi = "flake8-quotes"
 
-[".#protobuf"]
-source = "pypi"
-pypi = ".#protobuf"
-
 [flake8-rst-docstrings]
 source = "pypi"
 pypi = "flake8-rst-docstrings"
@@ -133,7 +117,3 @@ pypi = "flake8-string-format"
 [naipyext]
 source = "pypi"
 pypi = "naipyext"
-
-[".#flake8-broken-line"]
-source = "pypi"
-pypi = ".#flake8-broken-line"

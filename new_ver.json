@@ -17,7 +17,7 @@
   "log_symbols": "0.0.14",
   "naipyext": "0.7.0",
   "pdir2": "0.3.2",
-  "pdm": "1.4.0",
+  "pdm": "1.4.1",
   "pdm-pep517": "0.5.7",
   "pip_shims": "0.5.3",
   "protobuf": "3.15.6",
