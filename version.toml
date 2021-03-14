@@ -74,6 +74,10 @@ pypi = "darglint"
 source = "pypi"
 pypi = "flake8-commas"
 
+[mac-app-frontmost]
+source = "pypi"
+pypi = "mac-app-frontmost"
+
 [flake8_bandit]
 source = "pypi"
 pypi = "flake8_bandit"
