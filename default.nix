@@ -56,12 +56,20 @@ rec {
   inherit _python;
 
 
-  python = _python.override {
-    self = python;
-    packageOverrides = (n: o: _pypkgs python // ignoreCheckList o ignoreChecks // packageOverrides n python);
-    stdenv = _stdenv;
-  };
-
+  python =
+    let
+      python = _python.override {
+        self = python;
+        packageOverrides = (n: o:
+          _pypkgs python
+          // ignoreCheckList o ignoreChecks
+          // packageOverrides n python
+          // {pkgs = pkgs // {stdenv = _stdenv; }; }
+        );
+        stdenv = _stdenv;
+      };
+    in
+    python;
   apps = { py ? python }:
     import ./app.nix { inherit pkgs; python = py; };
 }
