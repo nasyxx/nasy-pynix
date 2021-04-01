@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "flake8-bugbear";
-  version = "21.3.2";
+  version = "21.4.3";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "183ca4ghb1l8mk3ic7ak9gm08z2j4c7h1hx78lxld5pgrqsf9p6a";
+    sha256 = "1rspvirl02l6vj3w45jpw2fkswny13avg3in9agb6mcri0gwhii3";
   };
   doCheck = false;
   propagatedBuildInputs = with pypkgs; [ attrs flake8 ];
