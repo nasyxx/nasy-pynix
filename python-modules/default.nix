@@ -3,13 +3,13 @@
 let
   packages = (self:
     let
-      inherit (builtins) attrNames readDir map filter listToAttrs replaceStrings;
+      inherit (builtins) attrNames readDir map filter listToAttrs replaceStrings fetchGit;
       inherit (pkgs.lib) hasPrefix hasSuffix;
 
       fpCheck = x: !(hasPrefix "." x) && x != "default.nix" && hasSuffix ".nix" x;
       rs = s: replaceStrings [ ".nix" ] [ "" ] s;
       pypkgs = python.pkgs // self;
-      callPackage = pkgs.newScope (pkgs // pypkgs);
+      callPackage = pkgs.newScope (pkgs // pypkgs // {inherit fetchGit;});
     in
     {
       inherit pypkgs;

@@ -14,6 +14,7 @@ buildPythonPackage rec {
 
   patchPhase = ''
     sed -i 's/flake8-bugbear.*/flake8-bugbear = "*"/g' pyproject.toml
+    sed -i 's/flake8-rst-docstrings.*/flake8-rst-docstrings = "*"/g' pyproject.toml
   '';
   propagatedBuildInputs = with pypkgs;
      [

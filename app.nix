@@ -6,9 +6,9 @@ let
   toApps = apps: builtins.listToAttrs (map (app: { name = app; value = toApp app; }) apps);
 in
 toApps [
-  "black"
   "isort"
   "mypy"
+  "black"
   "nvchecker"
   "pdm"
 ] //

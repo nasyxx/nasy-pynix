@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "pdm";
-  version = "1.4.5";
+  version = "1.5.2";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0zia47mywjf0w3cj3cl2hm8gcdhrmcsx5dplpgn9mj19dvqrnggy";
+    sha256 = "0s2hm7xz9vjj3pgyjl7ms5jsmq5c7pzsflfwpgdbcfnhwvcd74an";
   };
 
   format = "pyproject";

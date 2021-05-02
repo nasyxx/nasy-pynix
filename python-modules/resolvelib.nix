@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "resolvelib";
-  version = "0.5.4";
+  version = "0.7.0";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0a3nd359w345k58jwqqmw9s1vh4x8k1i41xzgy5jlk0fqvaq16wv";
+    sha256 = "0s088zdsgb06y2zp490hqksflsjx1q4zxswq2gswympx96zshh48";
   };
 
   format = "pyproject";

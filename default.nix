@@ -73,6 +73,8 @@ rec {
               checkInputs = [ ];
               installCheckPhase = "";
             });
+            jedi = n.njedi;
+            black = n.nblack;
           }
         );
         stdenv = _stdenv;

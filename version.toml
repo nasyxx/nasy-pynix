@@ -34,10 +34,6 @@ pypi = "protobuf"
 source = "pypi"
 pypi = "restructuredtext_lint"
 
-[halo]
-source = "pypi"
-pypi = "halo"
-
 [pdm]
 source = "pypi"
 pypi = "pdm"
@@ -53,6 +49,10 @@ pypi = "pdir2"
 [flake8-comprehensions]
 source = "pypi"
 pypi = "flake8-comprehensions"
+
+[nblack]
+source = "pypi"
+pypi = "black"
 
 [wemake-python-styleguide]
 source = "pypi"
@@ -109,6 +109,10 @@ pypi = "flake8-eradicate"
 [flake8-quotes]
 source = "pypi"
 pypi = "flake8-quotes"
+
+[njedi]
+source = "pypi"
+pypi = "jedi"
 
 [flake8-rst-docstrings]
 source = "pypi"

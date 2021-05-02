@@ -48,6 +48,9 @@ from tomlkit import item
 
 HV = re.compile('(.*)version = ".*?";(.*)sha256 = ".*?";(.*)', re.DOTALL)
 
+SP = {"nblack": "black"}
+IGNORES = {"njedi.nix", "default.nix"}
+
 
 def update_toml() -> None:
     """Update version.toml file."""
@@ -62,11 +65,14 @@ def update_toml() -> None:
                 }
                 | dict(
                     map(
-                        lambda name: (name, {"source": "pypi", "pypi": name}),
+                        lambda name: (
+                            name,
+                            {"source": "pypi", "pypi": SP.get(name, name)},
+                        ),
                         map(
                             lambda p: p.stem,
                             filter(
-                                lambda p: p.name != "default.nix",
+                                lambda p: p.name not in IGNORES,
                                 Path("./python-modules").glob("*.nix"),
                             ),
                         ),
@@ -102,6 +108,7 @@ def update_file(nv: tuple[str, str]) -> None:
     name, version = nv
     path = Path("./python-modules") / f"{name}.nix"
     text = path.rename(path.with_suffix(".bk")).read_text()
+    name = SP.get(name, name)
     hsh = update_hash(name, version)
 
     print(f"Update {name} to {version} - {hsh}")
