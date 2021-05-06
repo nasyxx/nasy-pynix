@@ -110,10 +110,6 @@ pypi = "flake8-eradicate"
 source = "pypi"
 pypi = "flake8-quotes"
 
-[njedi]
-source = "pypi"
-pypi = "jedi"
-
 [flake8-rst-docstrings]
 source = "pypi"
 pypi = "flake8-rst-docstrings"
