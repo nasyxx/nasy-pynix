@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "flake8-comprehensions";
-  version = "3.4.0";
+  version = "3.5.0";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "19qwqcx0zi4c487bkk2k2yzmk640zvq28c6sk1ma4n9rkyz3j060";
+    sha256 = "0ngmq4ly4wx6p2nq6hv99y1ncvjvfnzndl66bdx7y4l74l1yjjzj";
   };
 
   propagatedBuildInputs = with pypkgs; [ flake8 ];

@@ -49,7 +49,7 @@ from tomlkit import item
 HV = re.compile('(.*)version = ".*?";(.*)sha256 = ".*?";(.*)', re.DOTALL)
 
 SP = {"nblack": "black"}
-IGNORES = {"njedi.nix", "default.nix"}
+IGNORES = {"njedi.nix", "default.nix", "scipy.nix"}
 
 
 def update_toml() -> None:

@@ -14,6 +14,10 @@ pypi = "flake8-broken-line"
 source = "pypi"
 pypi = "spinners"
 
+[torch]
+source = "pypi"
+pypi = "torch"
+
 [python-cfonts]
 source = "pypi"
 pypi = "python-cfonts"
