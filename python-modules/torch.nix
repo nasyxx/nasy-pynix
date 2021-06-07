@@ -16,7 +16,7 @@ buildPythonPackage rec {
 
   src = fetchPypi {
     inherit pname version format;
-    sha256 = "";
+    sha256 = "0islvimqdf1iyvyfcmw5dcfbvcpfvqkp75vikhv2i6q1ihiy8pi2";
     platform = "macosx_10_9_x86_64";
     python = "cp39";
   };

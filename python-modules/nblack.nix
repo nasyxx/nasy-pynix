@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "black";
-  version = "21.5b1";
+  version = "21.5b2";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1cdkrl5vw26iy7s23v2zpr39m6g5xsgxhfhagzzflgfbvdc56s93";
+    sha256 = "1dalz3wdy8hr1ga9a4w17r7nd6d2my4hmiphzjfjczdfr2if1h0z";
   };
   format = "pyproject";
   buildInputs = with pypkgs; [ setuptools

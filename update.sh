@@ -50,6 +50,7 @@ HV = re.compile('(.*)version = ".*?";(.*)sha256 = ".*?";(.*)', re.DOTALL)
 
 SP = {"nblack": "black"}
 IGNORES = {"njedi.nix", "default.nix", "scipy.nix"}
+WHEEL = {"torch"}
 
 
 def update_toml() -> None:
@@ -89,12 +90,14 @@ def update_version() -> None:
 
 def update_hash(name: str, version: str) -> str:
     """Update hash."""
+    sfs = name in WHEEL and "-cp39-none-macosx_10_9_x86_64.whl" or ".tar.gz"
+    sop = name in WHEEL and "cp39" or "source"
     return (
         run(
             [
                 "nix-prefetch-url",
-                "https://files.pythonhosted.org/packages/source/"
-                f"{name[0]}/{name}/{name}-{version}.tar.gz",
+                f"https://files.pythonhosted.org/packages/{sop}/"
+                f"{name[0]}/{name}/{name}-{version}{sfs}",
             ],
             capture_output=True,
         )
@@ -137,3 +140,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+# Local Variables:
+# mode: Python
+# End:

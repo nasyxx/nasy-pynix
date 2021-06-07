@@ -64,10 +64,10 @@ rec {
           _pypkgs python
           // ignoreCheckList o ignoreChecks
           // packageOverrides n python
-          // {pkgs = pkgs // {stdenv = _stdenv; }; }
+          // { pkgs = pkgs // { stdenv = _stdenv; }; }
           // {
             poetry = o.poetry.overridePythonAttrs (old: {
-              propagatedBuildInputs = old.propagatedBuildInputs ++ [o.packaging];
+              propagatedBuildInputs = old.propagatedBuildInputs ++ [ o.packaging ];
               doInstallCheck = false;
               doCheck = false;
               checkInputs = [ ];
