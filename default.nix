@@ -21,6 +21,7 @@ let
     doCheck = false;
     checkInputs = [ ];
     installCheckPhase = "";
+    checkPhase = "";
   });
 
   ignoreCheckSet = pyp: ps:
@@ -32,6 +33,7 @@ let
             doCheck = false;
             checkInputs = [ ];
             installCheckPhase = "";
+            checkPhase = "";
           }))
       ps;
 
@@ -44,6 +46,7 @@ let
           doCheck = false;
           checkInputs = [ ];
           installCheckPhase = "";
+          checkPhase = "";
         };
       })
       ps));
@@ -66,6 +69,23 @@ rec {
           // packageOverrides n python
           // { pkgs = pkgs // { stdenv = _stdenv; }; }
           // {
+
+            black = n.nblack;
+
+            jedi = n.njedi;
+
+            mypy = o.mypy.overridePythonAttrs (old: {
+              format = "wheel";
+              src = o.fetchPypi {
+                inherit (old) pname version;
+                format = "wheel";
+                platform = "macosx_10_9_x86_64";
+                python = "cp39";
+                abi = "cp39";
+                sha256 = "sha256-fOMXWAHQrl/fp5tPDP7QiAevTQdbQCt+KU5qpyr5qio=";
+              };
+            });
+
             poetry = o.poetry.overridePythonAttrs (old: {
               propagatedBuildInputs = old.propagatedBuildInputs ++ [ o.packaging ];
               doInstallCheck = false;
@@ -73,8 +93,16 @@ rec {
               checkInputs = [ ];
               installCheckPhase = "";
             });
-            jedi = n.njedi;
-            black = n.nblack;
+
+            pytest-mock = o.pytest-mock.overridePythonAttrs (old: {
+              propagatedBuildInputs = [ o.pytest ];
+              doInstallCheck = false;
+              doCheck = false;
+              checkInputs = [ ];
+              installCheckPhase = "";
+
+            });
+
             scipy = o.scipy.overridePythonAttrs (old: {
               format = "wheel";
               doCheck = false;
@@ -91,17 +119,24 @@ rec {
                 abi = "cp39";
               };
             });
-            mypy = o.mypy.overridePythonAttrs (old: {
+
+            uvloop = o.uvloop.overridePythonAttrs (old: {
               format = "wheel";
+              doCheck = false;
+              prePatch = "";
+              preConfigure = "";
+              preBuild = "";
+              checkPhase = "";
               src = o.fetchPypi {
                 inherit (old) pname version;
                 format = "wheel";
+                sha256 = "sha256-DIpR0zVWv3A2dFLU1gHRdCwOgGzQGUeFkU2vGXdfDmc=";
                 platform = "macosx_10_9_x86_64";
                 python = "cp39";
                 abi = "cp39";
-                sha256 = "sha256-fOMXWAHQrl/fp5tPDP7QiAevTQdbQCt+KU5qpyr5qio=";
               };
             });
+
           }
         );
         stdenv = _stdenv;

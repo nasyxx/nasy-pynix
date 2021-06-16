@@ -12,22 +12,23 @@ buildPythonPackage rec {
   format = "pyproject";
 
   propagatedBuildInputs = with pypkgs; [
-      appdirs
-      click
-      distlib
-      halo
-      pep517
-      pdm-pep517
-      pip
-      pip_shims
-      pycomplete
-      python-cfonts
-      pythonfinder
-      python-dotenv
-      resolvelib
-      shellingham
-      tomlkit
-      wheel
-      keyring
-    ];
+    appdirs
+    atoml
+    click
+    distlib
+    halo
+    pep517
+    pdm-pep517
+    pip
+    pip_shims
+    pycomplete
+    python-cfonts
+    pythonfinder
+    python-dotenv
+    resolvelib
+    shellingham
+    tomlkit
+    wheel
+    keyring
+  ];
 }

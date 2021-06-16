@@ -62,6 +62,10 @@ pypi = "black"
 source = "pypi"
 pypi = "wemake-python-styleguide"
 
+[atoml]
+source = "pypi"
+pypi = "atoml"
+
 [flake8-bugbear]
 source = "pypi"
 pypi = "flake8-bugbear"

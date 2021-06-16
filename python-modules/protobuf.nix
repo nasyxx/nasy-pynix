@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "protobuf";
-  version = "3.17.2";
+  version = "3.17.3";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "03fl72ayf5crfpn2qfdfnfsz31kvzfnzg8q29x56wwa6y2n50d2s";
+    sha256 = "0yyx9wf18gamyfm9gr2s5nv77chg50z820r81l4jmhm9xajlx03j";
   };
 
 

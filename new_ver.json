@@ -1,4 +1,5 @@
 {
+  "atoml": "1.0.2",
   "better_exceptions": "0.3.3",
   "darglint": "1.8.0",
   "flake8-broken-line": "0.3.0",
@@ -16,18 +17,18 @@
   "log_symbols": "0.0.14",
   "mac-app-frontmost": "2020.12.3",
   "naipyext": "0.7.0",
-  "nblack": "21.5b2",
+  "nblack": "21.6b0",
   "pdir2": "0.3.2",
   "pdm": "1.6.2",
   "pdm-pep517": "0.7.4",
   "pip_shims": "0.5.3",
-  "protobuf": "3.17.2",
+  "protobuf": "3.17.3",
   "pycomplete": "0.3.2",
   "python-cfonts": "1.5.0",
   "pythonfinder": "1.2.6",
   "resolvelib": "0.7.0",
   "restructuredtext_lint": "1.3.2",
   "spinners": "0.0.24",
-  "torch": "1.8.1",
+  "torch": "1.9.0",
   "wemake-python-styleguide": "0.15.2"
 }
