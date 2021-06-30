@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "pythonfinder";
-  version = "1.2.6";
+  version = "1.2.7";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1x55civ4w8k1ylwxll70nga386havz39h74vgmf4rq9a2mxvgzr1";
+    sha256 = "0bikq04gncw0lk0whwjja9vj8xq3p7z10w8884irzl4mn7brc5wm";
   };
 
   propagatedBuildInputs = with pypkgs; [

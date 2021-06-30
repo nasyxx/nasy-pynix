@@ -69,7 +69,6 @@ rec {
           // packageOverrides n python
           // { pkgs = pkgs // { stdenv = _stdenv; }; }
           // {
-
             black = n.nblack;
 
             jedi = n.njedi;
@@ -83,6 +82,19 @@ rec {
                 python = "cp39";
                 abi = "cp39";
                 sha256 = "sha256-fOMXWAHQrl/fp5tPDP7QiAevTQdbQCt+KU5qpyr5qio=";
+              };
+            });
+
+            kiwisolver = o.kiwisolver.overridePythonAttrs (old: {
+              format = "wheel";
+              doCheck = false;
+              prePatch = "";
+              preConfigure = "";
+              preBuild = "";
+              checkPhase = "";
+              src = builtins.fetchurl {
+                url = "https://files.pythonhosted.org/packages/cp39/k/kiwisolver/kiwisolver-${old.version}-cp39-cp39-macosx_10_9_x86_64.whl";
+                sha256 = "sha256:003hparz24hy30cjalhyqg9hg4n5zplsssf1sghxx8dj6qd6ibsh";
               };
             });
 
@@ -100,7 +112,6 @@ rec {
               doCheck = false;
               checkInputs = [ ];
               installCheckPhase = "";
-
             });
 
             scipy = o.scipy.overridePythonAttrs (old: {
@@ -110,14 +121,18 @@ rec {
               preConfigure = "";
               preBuild = "";
               checkPhase = "";
-              src = o.fetchPypi {
-                inherit (old) pname version;
-                format = "wheel";
-                sha256 = "sha256-DIpR0zVWv3A2dFLU1gHRdCwOgGzQGUeFkU2vGXdfDmc=";
-                platform = "macosx_10_9_x86_64";
-                python = "cp39";
-                abi = "cp39";
+              src = builtins.fetchurl {
+                url = "https://files.pythonhosted.org/packages/cp39/s/scipy/scipy-${old.version}-cp39-cp39-macosx_10_9_x86_64.whl";
+                sha256 = "sha256:04yclg6xdq5i06vsfy3zhimjnwmvpsgx2ak92b3b8rh3hc7d8jfl";
               };
+              # src = o.fetchPypi {
+              #   inherit (old) pname version;
+              #   format = "wheel";
+              #   sha256 = "sha256-DIpR0zVWv3A2dFLU1gHRdCwOgGzQGUeFkU2vGXdfDmc=";
+              #   platform = "macosx_10_9_x86_64";
+              #   python = "cp39";
+              #   abi = "cp39";
+              # };
             });
 
             uvloop = o.uvloop.overridePythonAttrs (old: {
@@ -130,8 +145,8 @@ rec {
               src = o.fetchPypi {
                 inherit (old) pname version;
                 format = "wheel";
-                sha256 = "sha256-DIpR0zVWv3A2dFLU1gHRdCwOgGzQGUeFkU2vGXdfDmc=";
-                platform = "macosx_10_9_x86_64";
+                sha256 = "sha256-EUVDyE6V3xtP9Ubm46J1IVgEZqMBJ/EhcqMngXKtaLw";
+                platform = "macosx_10_14_x86_64";
                 python = "cp39";
                 abi = "cp39";
               };

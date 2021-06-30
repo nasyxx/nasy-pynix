@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "pdm";
-  version = "1.6.2";
+  version = "1.6.4";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1lpwb55fg8yrhw8gqg6gg5rr1a49gb3j5vrdf6lmh11394zs80z4";
+    sha256 = "16f9fy6lr1qcd6w8aa1wbqghil055xjz8g0wzl8ki8wgp8zvafkc";
   };
 
   format = "pyproject";
@@ -26,6 +26,7 @@ buildPythonPackage rec {
     pythonfinder
     python-dotenv
     resolvelib
+    setuptools
     shellingham
     tomlkit
     wheel

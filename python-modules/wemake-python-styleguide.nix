@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "wemake-python-styleguide";
-  version = "0.15.2";
+  version = "0.15.3";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "06csx3ldmms9hy7zx061yliiw1gi7qrs0pv3ayyjdxyp78yknrj6";
+    sha256 = "0hr1rllwikarzghszn606y0hc0mpg30hdv88b68pnyz6pbdax2cb";
   };
 
   format = "pyproject";
