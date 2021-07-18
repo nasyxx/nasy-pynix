@@ -11,7 +11,7 @@ buildPythonPackage rec {
 
   format = "pyproject";
 
-  doCheck = false;port
+  doCheck = false;
 
   propagatedBuildInputs = with pypkgs; [
     toml
