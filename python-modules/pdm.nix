@@ -32,4 +32,8 @@ buildPythonPackage rec {
     wheel
     keyring
   ];
+
+  patchPhase = ''
+    sed -i 's/pdm-pep517<0.8.0,>=0.7.0/pdm-pep517/g' pyproject.toml
+  '';
 }

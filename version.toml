@@ -118,6 +118,10 @@ pypi = "flake8-eradicate"
 source = "pypi"
 pypi = "flake8-quotes"
 
+[tomli]
+source = "pypi"
+pypi = "tomli"
+
 [flake8-rst-docstrings]
 source = "pypi"
 pypi = "flake8-rst-docstrings"

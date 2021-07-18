@@ -2,13 +2,13 @@
 
 buildPythonPackage rec {
   pname = "atoml";
-  version = "1.0.2";
+  version = "1.0.3";
 
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "184paf40nwna9q6i5lzyzabw2mpxrhsas9vjaq53pmja60cw5c3b";
+    sha256 = "154f44hfjy9pxs1k4zgl71dzjaw3bnpwds5jbnmad56ymzy0xmsx";
   };
 
   doCheck = false;
