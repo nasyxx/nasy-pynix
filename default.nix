@@ -73,17 +73,17 @@ rec {
 
             jedi = n.njedi;
 
-            mypy = o.mypy.overridePythonAttrs (old: {
-              format = "wheel";
-              src = o.fetchPypi {
-                inherit (old) pname version;
-                format = "wheel";
-                platform = "macosx_10_9_x86_64";
-                python = "cp39";
-                abi = "cp39";
-                sha256 = "sha256-fOMXWAHQrl/fp5tPDP7QiAevTQdbQCt+KU5qpyr5qio=";
-              };
-            });
+            # mypy = o.mypy.overridePythonAttrs (old: {
+            #   format = "wheel";
+            #   src = o.fetchPypi {
+            #     inherit (old) pname version;
+            #     format = "wheel";
+            #     platform = "macosx_10_9_x86_64";
+            #     python = "cp39";
+            #     abi = "cp39";
+            #     sha256 = "sha256-fOMXWAHQrl/fp5tPDP7QiAevTQdbQCt+KU5qpyr5qio=";
+            #   };
+            # });
 
             kiwisolver = o.kiwisolver.overridePythonAttrs (old: {
               format = "wheel";

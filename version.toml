@@ -106,6 +106,10 @@ pypi = "resolvelib"
 source = "pypi"
 pypi = "pythonfinder"
 
+[flit_core]
+source = "pypi"
+pypi = "flit_core"
+
 [pdm-pep517]
 source = "pypi"
 pypi = "pdm-pep517"
